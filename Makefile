@@ -197,7 +197,7 @@ cluster/cleanup/crds:
 .PHONY: deploy/integreatly-rhmi-cr.yml
 deploy/integreatly-rhmi-cr.yml:
 	@echo "selfSignedCerts = $(SELF_SIGNED_CERTS)"
-	sed "s/INSTALLATION_NAME/$(INSTALLATION_NAME)/g" deploy/crds/examples/integreatly-rhmi-cr.yaml | \
+	@sed "s/INSTALLATION_NAME/$(INSTALLATION_NAME)/g" deploy/crds/examples/integreatly-rhmi-cr.yaml | \
 	sed "s/INSTALLATION_TYPE/$(INSTALLATION_TYPE)/g" | \
 	sed "s/INSTALLATION_PREFIX/$(INSTALLATION_PREFIX)/g" | \
 	sed "s/SELF_SIGNED_CERTS/$(SELF_SIGNED_CERTS)/g" | \
